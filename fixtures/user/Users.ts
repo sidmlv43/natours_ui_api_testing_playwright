@@ -1,4 +1,6 @@
-export const USERS = {
+import { User } from "./user";
+
+export const USERS: Record<string, User> = {
   admin: {
     email: "admin@natours.io",
     password: "test1234",

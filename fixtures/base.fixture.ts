@@ -8,13 +8,13 @@ type MyFixture = {
 
 export const test = base.extend<MyFixture>({
   useUser: async ({ page }, use) => {
-    const loginAs = async (user: User) => {
+    const useUser = async (user: User) => {
       const homepage = new Homepage(page);
-      homepage.navigate();
+      await homepage.navigate();
       const loginpage = await homepage.gotoLoginPage();
       loginpage.login(user.email, user.password);
     };
-    await use(loginAs);
+    await use(useUser);
   },
 });
 

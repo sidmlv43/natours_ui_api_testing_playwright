@@ -60,6 +60,14 @@ export default class UserProfile {
     });
   }
 
+  getNameInputField() {
+    return this.nameInputField;
+  }
+
+  getEmailInputField() {
+    return this.emailInputField;
+  }
+
   async updateName(name: string) {
     await this.nameInputField.fill(name);
     await this.saveSettingsButton.click();
