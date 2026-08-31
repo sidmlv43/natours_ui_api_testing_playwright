@@ -69,6 +69,7 @@ export default class UserProfile {
   }
 
   async updateName(name: string) {
+    await this.nameInputField.clear();
     await this.nameInputField.fill(name);
     await this.saveSettingsButton.click();
   }
